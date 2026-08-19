@@ -1,0 +1,40 @@
+name: bootstrap-v0.1.0-source
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Import AI-IP Shield v0.1.0 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive=".bootstrap/AI-IP-Shield-v0.1.0-bootstrap-source.zip"
+          if [ ! -f "$archive" ]; then
+            echo "Bootstrap archive already consumed; nothing to do."
+            exit 0
+          fi
+          echo "3131517e2421fb0d318f5b00806b8b3e22f896e9fd606b77032885f64d605e39  $archive" | sha256sum -c -
+          unzip -o "$archive" -d .
+          rm -f "$archive"
+          rmdir .bootstrap 2>/dev/null || true
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No source changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: import AI-IP Shield v0.1.0 source"
+          git push origin HEAD:main
