@@ -1,0 +1,234 @@
+{
+  "summary": {
+    "cases": 13,
+    "detected": 4,
+    "detection_rate": 0.3076923076923077,
+    "token_recovered": 4,
+    "recovery_rate": 0.3076923076923077,
+    "mean_ber": 0.33653846153846156
+  },
+  "results": [
+    {
+      "attack_id": "T01-copy",
+      "attack_name": "copy",
+      "parameters": {},
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T01-copy.png",
+      "detected": true,
+      "registry_match": true,
+      "recovered_token": "8F5C50DF6317C92C",
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": true,
+      "ber": 0.0,
+      "runtime_ms": 79.548,
+      "evidence_level": "REGISTERED_EXACT_MATCH"
+    },
+    {
+      "attack_id": "T02-screenshot",
+      "attack_name": "screenshot-sim",
+      "parameters": {
+        "scale": 0.9,
+        "quality": 85
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T02-screenshot.jpg",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 19.156,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T03-resize-75",
+      "attack_name": "resize",
+      "parameters": {
+        "scale": 0.75
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T03-resize-75.png",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 25.25,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T03-resize-50",
+      "attack_name": "resize",
+      "parameters": {
+        "scale": 0.5
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T03-resize-50.png",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5208333333333334,
+      "runtime_ms": 20.493,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T03-crop-10",
+      "attack_name": "crop",
+      "parameters": {
+        "fraction": 0.1
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T03-crop-10.png",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 30.452,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T03-crop-20",
+      "attack_name": "crop",
+      "parameters": {
+        "fraction": 0.2
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T03-crop-20.png",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 26.544,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T03-rotate-3",
+      "attack_name": "rotate",
+      "parameters": {
+        "degrees": 3.0
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T03-rotate-3.png",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 34.343,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T04-jpeg-95",
+      "attack_name": "jpeg",
+      "parameters": {
+        "quality": 95
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T04-jpeg-95.jpg",
+      "detected": true,
+      "registry_match": true,
+      "recovered_token": "8F5C50DF6317C92C",
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": true,
+      "ber": 0.0,
+      "runtime_ms": 21.979,
+      "evidence_level": "STRONG"
+    },
+    {
+      "attack_id": "T04-jpeg-75",
+      "attack_name": "jpeg",
+      "parameters": {
+        "quality": 75
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T04-jpeg-75.jpg",
+      "detected": true,
+      "registry_match": true,
+      "recovered_token": "8F5C50DF6317C92C",
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": true,
+      "ber": 0.0,
+      "runtime_ms": 18.69,
+      "evidence_level": "STRONG"
+    },
+    {
+      "attack_id": "T04-jpeg-60",
+      "attack_name": "jpeg",
+      "parameters": {
+        "quality": 60
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T04-jpeg-60.jpg",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.28125,
+      "runtime_ms": 18.142,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "T05-conversion",
+      "attack_name": "conversion",
+      "parameters": {
+        "quality": 90
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/T05-conversion.png",
+      "detected": true,
+      "registry_match": true,
+      "recovered_token": "8F5C50DF6317C92C",
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": true,
+      "ber": 0.0,
+      "runtime_ms": 33.858,
+      "evidence_level": "STRONG"
+    },
+    {
+      "attack_id": "TC-resize75-jpeg60",
+      "attack_name": "composite-resize-jpeg",
+      "parameters": {
+        "scale": 0.75,
+        "quality": 60
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/TC-resize75-jpeg60.jpg",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 16.055,
+      "evidence_level": "NO_EVIDENCE"
+    },
+    {
+      "attack_id": "TC-crop10-jpeg75",
+      "attack_name": "composite-crop-jpeg",
+      "parameters": {
+        "fraction": 0.1,
+        "quality": 75
+      },
+      "input_path": "demo-output/protected.png",
+      "output_path": "reports/real-image-attacks/TC-crop10-jpeg75.jpg",
+      "detected": false,
+      "registry_match": false,
+      "recovered_token": null,
+      "expected_token": "8F5C50DF6317C92C",
+      "token_exact_match": false,
+      "ber": 0.5104166666666666,
+      "runtime_ms": 19.108,
+      "evidence_level": "NO_EVIDENCE"
+    }
+  ]
+}

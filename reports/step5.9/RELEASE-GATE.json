@@ -1,0 +1,48 @@
+{
+  "step": "5.9",
+  "version": "0.1.0",
+  "decision": "GO_PUBLIC_ALPHA_PACKAGE",
+  "tests": {
+    "passed": 34,
+    "failed": 0
+  },
+  "release_check": "PASS",
+  "python": "3.13.5",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "wheel_smoke": {
+    "install": "PASS",
+    "version": "PASS",
+    "doctor_lightweight": "PASS",
+    "codex_project_skill_install": "PASS",
+    "claude_project_skill_install": "PASS",
+    "skill_export": "PASS"
+  },
+  "cli_smoke": {
+    "image": {
+      "detected": true,
+      "registry_match": true,
+      "exact_hash_match": true,
+      "evidence_level": "REGISTERED_EXACT_MATCH"
+    },
+    "pdf": {
+      "detected": true,
+      "registry_match": true,
+      "exact_hash_match": true,
+      "pages_detected": 3,
+      "page_count": 3,
+      "evidence_level": "REGISTERED_EXACT_MATCH"
+    }
+  },
+  "pinned_engines": {
+    "image": "blind-native",
+    "pdf": "blind-native-pdf"
+  },
+  "optional_runtime_not_claimed": [
+    "c2pa-python",
+    "videoseal/pixelseal"
+  ],
+  "publication": {
+    "github_pushed": false,
+    "plugin_directory_published": false
+  }
+}

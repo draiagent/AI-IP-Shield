@@ -1,0 +1,10 @@
+{
+  "schema": "ai-ip-shield-trust-store/v1",
+  "keys": {
+    "ed25519:4e3e09dbd6f418e9a9ec6b87f49a75a7": {
+      "label": "AI-IP Shield Step 5.7 Demo Signer",
+      "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEANChBtVhleqL5IaxXj0s1LDpZoJKz4YSF5gaVpvJIiYA=\n-----END PUBLIC KEY-----\n",
+      "trusted_at": "2026-08-19T02:21:12.154933+00:00"
+    }
+  }
+}

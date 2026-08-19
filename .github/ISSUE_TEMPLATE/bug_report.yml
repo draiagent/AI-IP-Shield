@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a reproducible AI-IP Shield defect
+title: "[bug] "
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: Problem
+      description: Describe the failure without including private keys or confidential assets.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: Include command, sanitized input type, engine, and relevant output.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Environment
+      description: Paste `aipshield doctor` output with sensitive paths redacted if necessary.

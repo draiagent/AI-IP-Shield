@@ -1,0 +1,246 @@
+{
+  "benchmark_type": "Step 5.6 engineering benchmark",
+  "engine": "dct-qim-baseline",
+  "source_images": 20,
+  "source_categories": [
+    "low-texture",
+    "photo-like",
+    "real-infographic",
+    "text-card"
+  ],
+  "attack_cases": 260,
+  "negative_controls": 500,
+  "false_positive_detected": 0,
+  "false_positive_rate": 0.0,
+  "elapsed_seconds": 17.928036683000073,
+  "per_attack": {
+    "T01-copy": {
+      "attack_name": "copy",
+      "parameters": {},
+      "cases": 20,
+      "detected": 20,
+      "detection_rate": 1.0,
+      "recovered": 20,
+      "recovery_rate": 1.0,
+      "mean_ber": 0.0
+    },
+    "T02-screenshot": {
+      "attack_name": "screenshot-sim",
+      "parameters": {
+        "scale": 0.9,
+        "quality": 85
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5177083333333333
+    },
+    "T03-resize-75": {
+      "attack_name": "resize",
+      "parameters": {
+        "scale": 0.75
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5229166666666667
+    },
+    "T03-resize-50": {
+      "attack_name": "resize",
+      "parameters": {
+        "scale": 0.5
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5291666666666667
+    },
+    "T03-crop-10": {
+      "attack_name": "crop",
+      "parameters": {
+        "fraction": 0.1
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5234375
+    },
+    "T03-crop-20": {
+      "attack_name": "crop",
+      "parameters": {
+        "fraction": 0.2
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5239583333333333
+    },
+    "T03-rotate-3": {
+      "attack_name": "rotate",
+      "parameters": {
+        "degrees": 3.0
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5229166666666667
+    },
+    "T04-jpeg-95": {
+      "attack_name": "jpeg",
+      "parameters": {
+        "quality": 95
+      },
+      "cases": 20,
+      "detected": 20,
+      "detection_rate": 1.0,
+      "recovered": 20,
+      "recovery_rate": 1.0,
+      "mean_ber": 0.0
+    },
+    "T04-jpeg-75": {
+      "attack_name": "jpeg",
+      "parameters": {
+        "quality": 75
+      },
+      "cases": 20,
+      "detected": 20,
+      "detection_rate": 1.0,
+      "recovered": 20,
+      "recovery_rate": 1.0,
+      "mean_ber": 0.0
+    },
+    "T04-jpeg-60": {
+      "attack_name": "jpeg",
+      "parameters": {
+        "quality": 60
+      },
+      "cases": 20,
+      "detected": 16,
+      "detection_rate": 0.8,
+      "recovered": 16,
+      "recovery_rate": 0.8,
+      "mean_ber": 0.05364583333333334
+    },
+    "T05-conversion": {
+      "attack_name": "conversion",
+      "parameters": {
+        "quality": 90
+      },
+      "cases": 20,
+      "detected": 20,
+      "detection_rate": 1.0,
+      "recovered": 20,
+      "recovery_rate": 1.0,
+      "mean_ber": 0.0
+    },
+    "TC-resize75-jpeg60": {
+      "attack_name": "composite-resize-jpeg",
+      "parameters": {
+        "scale": 0.75,
+        "quality": 60
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5229166666666667
+    },
+    "TC-crop10-jpeg75": {
+      "attack_name": "composite-crop-jpeg",
+      "parameters": {
+        "fraction": 0.1,
+        "quality": 75
+      },
+      "cases": 20,
+      "detected": 0,
+      "detection_rate": 0.0,
+      "recovered": 0,
+      "recovery_rate": 0.0,
+      "mean_ber": 0.5192708333333333
+    }
+  },
+  "release_gates": [
+    {
+      "gate": "T01-copy",
+      "target": 1.0,
+      "actual": 1.0,
+      "pass": true
+    },
+    {
+      "gate": "T02-screenshot",
+      "target": 0.9,
+      "actual": 0.0,
+      "pass": false
+    },
+    {
+      "gate": "T03-resize-75",
+      "target": 0.95,
+      "actual": 0.0,
+      "pass": false
+    },
+    {
+      "gate": "T03-resize-50",
+      "target": 0.95,
+      "actual": 0.0,
+      "pass": false
+    },
+    {
+      "gate": "T03-crop-10",
+      "target": 0.9,
+      "actual": 0.0,
+      "pass": false
+    },
+    {
+      "gate": "T03-crop-20",
+      "target": 0.9,
+      "actual": 0.0,
+      "pass": false
+    },
+    {
+      "gate": "T04-jpeg-95",
+      "target": 0.9,
+      "actual": 1.0,
+      "pass": true
+    },
+    {
+      "gate": "T04-jpeg-75",
+      "target": 0.9,
+      "actual": 1.0,
+      "pass": true
+    },
+    {
+      "gate": "T04-jpeg-60",
+      "target": 0.9,
+      "actual": 0.8,
+      "pass": false
+    },
+    {
+      "gate": "T05-conversion",
+      "target": 0.85,
+      "actual": 1.0,
+      "pass": true
+    },
+    {
+      "gate": "False Positive Rate",
+      "target": "< 0.01",
+      "actual": 0.0,
+      "pass": true
+    }
+  ],
+  "v0_1_gate_pass": false,
+  "decision": "NO-GO",
+  "note": "This benchmark uses 20 mixed real-derived/synthetic sources and 500 negative controls. Step 4 specifies 100 protected source images for the full Golden Test Set; this run is an engineering gate, not the final production validation."
+}

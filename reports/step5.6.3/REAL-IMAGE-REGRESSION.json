@@ -1,0 +1,108 @@
+{
+  "engine": "blind-watermark-native-adaptive",
+  "token": "8FDC4F62B4B1B3D3",
+  "quality": {
+    "psnr": 37.38028585192301,
+    "ssim": 0.986181461358696
+  },
+  "all_recovered": true,
+  "rows": [
+    {
+      "attack_id": "ORIGINAL",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0
+    },
+    {
+      "attack_id": "T01-copy",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0,
+      "runtime_ms": 33.2460610002272
+    },
+    {
+      "attack_id": "T02-screenshot",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0,
+      "runtime_ms": 26.73347699965234
+    },
+    {
+      "attack_id": "T03-resize-75",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0047169811320754715,
+      "runtime_ms": 21.650030000273546
+    },
+    {
+      "attack_id": "T03-resize-50",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0,
+      "runtime_ms": 13.760609999735607
+    },
+    {
+      "attack_id": "T03-crop-10",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.014150943396226415,
+      "runtime_ms": 120.86744399994132
+    },
+    {
+      "attack_id": "T03-crop-20",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.07547169811320754,
+      "runtime_ms": 135.8355710003707
+    },
+    {
+      "attack_id": "T03-rotate-3",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0,
+      "runtime_ms": 209.84885099960593
+    },
+    {
+      "attack_id": "T04-jpeg-95",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0047169811320754715,
+      "runtime_ms": 14.61688100016545
+    },
+    {
+      "attack_id": "T04-jpeg-75",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.014150943396226415,
+      "runtime_ms": 13.726458999826718
+    },
+    {
+      "attack_id": "T04-jpeg-60",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.018867924528301886,
+      "runtime_ms": 13.900250000006054
+    },
+    {
+      "attack_id": "T05-conversion",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.0047169811320754715,
+      "runtime_ms": 34.696270000040386
+    },
+    {
+      "attack_id": "TC-resize75-jpeg60",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.018867924528301886,
+      "runtime_ms": 16.936736999923596
+    },
+    {
+      "attack_id": "TC-crop10-jpeg75",
+      "detected": true,
+      "recovered": true,
+      "ber": 0.04245283018867924,
+      "runtime_ms": 121.3712389999273
+    }
+  ]
+}

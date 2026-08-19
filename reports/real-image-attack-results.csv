@@ -1,0 +1,14 @@
+﻿attack_id,attack_name,parameters,detected,registry_match,token_exact_match,ber,runtime_ms,evidence_level,output_path
+T01-copy,copy,{},True,True,True,0.0,79.548,REGISTERED_EXACT_MATCH,reports/real-image-attacks/T01-copy.png
+T02-screenshot,screenshot-sim,"{""quality"": 85, ""scale"": 0.9}",False,False,False,0.5104166666666666,19.156,NO_EVIDENCE,reports/real-image-attacks/T02-screenshot.jpg
+T03-resize-75,resize,"{""scale"": 0.75}",False,False,False,0.5104166666666666,25.25,NO_EVIDENCE,reports/real-image-attacks/T03-resize-75.png
+T03-resize-50,resize,"{""scale"": 0.5}",False,False,False,0.5208333333333334,20.493,NO_EVIDENCE,reports/real-image-attacks/T03-resize-50.png
+T03-crop-10,crop,"{""fraction"": 0.1}",False,False,False,0.5104166666666666,30.452,NO_EVIDENCE,reports/real-image-attacks/T03-crop-10.png
+T03-crop-20,crop,"{""fraction"": 0.2}",False,False,False,0.5104166666666666,26.544,NO_EVIDENCE,reports/real-image-attacks/T03-crop-20.png
+T03-rotate-3,rotate,"{""degrees"": 3.0}",False,False,False,0.5104166666666666,34.343,NO_EVIDENCE,reports/real-image-attacks/T03-rotate-3.png
+T04-jpeg-95,jpeg,"{""quality"": 95}",True,True,True,0.0,21.979,STRONG,reports/real-image-attacks/T04-jpeg-95.jpg
+T04-jpeg-75,jpeg,"{""quality"": 75}",True,True,True,0.0,18.69,STRONG,reports/real-image-attacks/T04-jpeg-75.jpg
+T04-jpeg-60,jpeg,"{""quality"": 60}",False,False,False,0.28125,18.142,NO_EVIDENCE,reports/real-image-attacks/T04-jpeg-60.jpg
+T05-conversion,conversion,"{""quality"": 90}",True,True,True,0.0,33.858,STRONG,reports/real-image-attacks/T05-conversion.png
+TC-resize75-jpeg60,composite-resize-jpeg,"{""quality"": 60, ""scale"": 0.75}",False,False,False,0.5104166666666666,16.055,NO_EVIDENCE,reports/real-image-attacks/TC-resize75-jpeg60.jpg
+TC-crop10-jpeg75,composite-crop-jpeg,"{""fraction"": 0.1, ""quality"": 75}",False,False,False,0.5104166666666666,19.108,NO_EVIDENCE,reports/real-image-attacks/TC-crop10-jpeg75.jpg

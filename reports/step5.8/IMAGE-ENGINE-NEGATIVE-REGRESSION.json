@@ -1,0 +1,9 @@
+{
+  "reason": "Regression after adding PDF decode profiles",
+  "engine": "blind-native",
+  "negative_controls": 100,
+  "false_positives": 0,
+  "fpr": 0.0,
+  "elapsed_seconds": 15.418636903000333,
+  "pass": true
+}

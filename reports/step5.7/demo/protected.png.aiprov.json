@@ -1,0 +1,34 @@
+{
+  "manifest": {
+    "schema": "https://ai-ip-shield.local/provenance/v1",
+    "created_at": "2026-08-19T02:21:13.047484+00:00",
+    "claim_generator": {
+      "name": "AI-IP Shield",
+      "version": "0.1.0"
+    },
+    "title": "AI-IP Shield Step 5.7 Demo",
+    "asset": {
+      "sha256": "eac1bf5fd40eb5c4b736b322841bfc4d15d8c58cc7b4ca886587f17e8d2dae21",
+      "format": "image/png",
+      "asset_id": "8D5D9DB6C9",
+      "fingerprint_commitment": "d24bfeab62939f41372ff708d0a971815ff8d139f926424a88b744ca30743562",
+      "version": 1
+    },
+    "actions": [
+      {
+        "action": "protected",
+        "software": "AI-IP Shield"
+      }
+    ],
+    "training_policy": {
+      "ai_inference": "notAllowed",
+      "ai_generative_training": "notAllowed"
+    }
+  },
+  "signature": {
+    "alg": "Ed25519",
+    "key_id": "ed25519:4e3e09dbd6f418e9a9ec6b87f49a75a7",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEANChBtVhleqL5IaxXj0s1LDpZoJKz4YSF5gaVpvJIiYA=\n-----END PUBLIC KEY-----\n",
+    "value_b64": "neQL+SSz9dFwG3BmaksBlalGeIqGPtPofMXKm+PP8D8GtFt9P0NRr8lqgPSQDSQ7RJWA7c6kZt5s+KcX9V2rDQ=="
+  }
+}

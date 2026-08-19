@@ -1,0 +1,32 @@
+{
+  "input_path": "/mnt/data/0B559232-4B9F-4DD6-BD24-1605B912DE59.jpeg",
+  "output_path": "reports/step5.7/demo/protected.png",
+  "source_sha256": "8d5d9db6c93fefdb6597a2479e364f09946aa4a11e79aa2ba41a7d54fbe3248f",
+  "protected_sha256": "eac1bf5fd40eb5c4b736b322841bfc4d15d8c58cc7b4ca886587f17e8d2dae21",
+  "fingerprint": {
+    "fingerprint_id": "AIPS-8D5D9DB6C9-63D1C309-V01-6E1E76-D448",
+    "watermark_token": "D24BFEAB62939F41",
+    "asset_id": "8D5D9DB6C9",
+    "copy_id": "63D1C309",
+    "version": 1
+  },
+  "engine": "blind-watermark-native-adaptive",
+  "report_path": "reports/step5.7/demo/protect-report.json",
+  "provenance": {
+    "backend": "aip-sidecar-ed25519",
+    "status": "SIGNED_UNVERIFIED_TRUST",
+    "present": true,
+    "signature_valid": true,
+    "asset_hash_match": true,
+    "trusted": false,
+    "signer_key_id": "ed25519:4e3e09dbd6f418e9a9ec6b87f49a75a7",
+    "manifest_path": "reports/step5.7/demo/protected.png.aiprov.json",
+    "message": "A signed provenance sidecar was created. Trust is established separately by the verifier trust store.",
+    "details": {
+      "training_policy": {
+        "ai_inference": "notAllowed",
+        "ai_generative_training": "notAllowed"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-ip-shield"
+version = "0.1.0"
+description = "Defensive AI-era IP protection for image/PDF fingerprinting, watermarking, provenance, verification, and attack testing"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "AI-IP Shield contributors"}]
+keywords = ["watermark", "fingerprint", "provenance", "c2pa", "intellectual-property", "ai"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Security",
+]
+dependencies = ["numpy>=1.24", "opencv-python>=4.8", "Pillow>=10", "cryptography>=41", "PyMuPDF>=1.24"]
+
+[project.scripts]
+aipshield = "aipshield.cli:main"
+
+[project.optional-dependencies]
+blind = ["blind-watermark"]
+pixelseal = ["torch>=2.3", "torchvision"]
+benchmark = ["scikit-image>=0.22", "pytest>=8", "reportlab>=4"]
+provenance = ["c2pa-python>=0.37"]
+dev = ["pytest>=8", "scikit-image>=0.22", "reportlab>=4", "build>=1.2"]
+
+[tool.setuptools.packages.find]
+include = ["aipshield*"]
+
+[tool.setuptools.package-data]
+"aipshield.bundled_skill" = ["SKILL.md", "references/*.md", "agents/*.yaml"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

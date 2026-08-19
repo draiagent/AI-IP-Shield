@@ -1,0 +1,5 @@
+{
+  "trust_store": "reports/step5.7/demo/trust-store.json",
+  "key_id": "ed25519:4e3e09dbd6f418e9a9ec6b87f49a75a7",
+  "label": "AI-IP Shield Step 5.7 Demo Signer"
+}

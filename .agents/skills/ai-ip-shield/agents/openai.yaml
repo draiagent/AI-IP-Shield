@@ -1,0 +1,6 @@
+interface:
+  display_name: "AI-IP Shield"
+  short_description: "Protect and verify image/PDF intellectual property"
+  default_prompt: "Use $ai-ip-shield to protect or verify this image/PDF and report the evidence and limitations."
+policy:
+  allow_implicit_invocation: true

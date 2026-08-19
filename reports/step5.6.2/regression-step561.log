@@ -1,0 +1,197 @@
+benchmarking dct-qim...
+benchmarking blind...
+benchmarking pixelseal...
+{
+  "benchmark": "Step 5.6.1 engineering comparison",
+  "results": [
+    {
+      "requested_engine": "dct-qim",
+      "resolved_engine": "dct-qim-baseline",
+      "available": true,
+      "source_images": 3,
+      "attack_cases": 39,
+      "negative_controls": 5,
+      "false_positive_rate": 0.0,
+      "mean_psnr": 47.042343339307685,
+      "mean_ssim": 0.986560934499666,
+      "elapsed_seconds": 1.9103106499999853,
+      "per_attack": {
+        "T01-copy": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T02-screenshot": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5243055555555556
+        },
+        "T03-resize-75": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5243055555555556
+        },
+        "T03-resize-50": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5208333333333334
+        },
+        "T03-crop-10": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5243055555555556
+        },
+        "T03-crop-20": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5173611111111112
+        },
+        "T03-rotate-3": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5243055555555556
+        },
+        "T04-jpeg-95": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T04-jpeg-75": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T04-jpeg-60": {
+          "cases": 3,
+          "detection_rate": 0.6666666666666666,
+          "recovery_rate": 0.6666666666666666,
+          "mean_ber": 0.024305555555555556
+        },
+        "T05-conversion": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "TC-resize75-jpeg60": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5208333333333334
+        },
+        "TC-crop10-jpeg75": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.5277777777777778
+        }
+      }
+    },
+    {
+      "requested_engine": "blind",
+      "resolved_engine": "blind-watermark-native-adaptive",
+      "available": true,
+      "source_images": 3,
+      "attack_cases": 39,
+      "negative_controls": 5,
+      "false_positive_rate": 0.0,
+      "mean_psnr": 36.58444397010613,
+      "mean_ssim": 0.9182859360887708,
+      "elapsed_seconds": 19.926373726999998,
+      "per_attack": {
+        "T01-copy": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T02-screenshot": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.38993710691823896
+        },
+        "T03-resize-75": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T03-resize-50": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T03-crop-10": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.3899371069182391
+        },
+        "T03-crop-20": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.3946540880503145
+        },
+        "T03-rotate-3": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.3726415094339623
+        },
+        "T04-jpeg-95": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T04-jpeg-75": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T04-jpeg-60": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "T05-conversion": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.0
+        },
+        "TC-resize75-jpeg60": {
+          "cases": 3,
+          "detection_rate": 1.0,
+          "recovery_rate": 1.0,
+          "mean_ber": 0.015723270440251572
+        },
+        "TC-crop10-jpeg75": {
+          "cases": 3,
+          "detection_rate": 0.0,
+          "recovery_rate": 0.0,
+          "mean_ber": 0.3789308176100629
+        }
+      }
+    },
+    {
+      "requested_engine": "pixelseal",
+      "available": false,
+      "error": "RuntimeError: PixelSeal runtime unavailable. Install facebookresearch/videoseal or point AIPSHIELD_PIXELSEAL_SOURCE at a local checkout."
+    }
+  ]
+}

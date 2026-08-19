@@ -1,0 +1,5 @@
+{
+  "private_key": "reports/step5.7/demo/dev-signing.pem",
+  "public_key": "reports/step5.7/demo/dev-signing.pub.pem",
+  "key_id": "ed25519:4e3e09dbd6f418e9a9ec6b87f49a75a7"
+}

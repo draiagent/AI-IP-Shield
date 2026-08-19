@@ -1,0 +1,94 @@
+name: release-v0.1.0
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Skip if v0.1.0 already exists
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v0.1.0 >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install build and validation dependencies
+        if: steps.existing.outputs.exists != 'true'
+        run: |
+          python -m pip install --upgrade pip build
+          python -m pip install -e ".[benchmark]"
+
+      - name: Test and release gate
+        if: steps.existing.outputs.exists != 'true'
+        run: |
+          python -m pytest -q
+          python scripts/release_check.py
+          aipshield doctor
+
+      - name: Build Python wheel
+        if: steps.existing.outputs.exists != 'true'
+        run: python -m build --wheel
+
+      - name: Export portable Agent Skill
+        if: steps.existing.outputs.exists != 'true'
+        run: |
+          mkdir -p .release-tmp
+          aipshield skill-export --output .release-tmp/ai-ip-shield-skill-v0.1.0.zip
+
+      - name: Build four release assets + checksums
+        if: steps.existing.outputs.exists != 'true'
+        run: |
+          python scripts/build_release_assets.py \
+            --output-dir release-assets \
+            --wheel dist/ai_ip_shield-0.1.0-py3-none-any.whl \
+            --skill-zip .release-tmp/ai-ip-shield-skill-v0.1.0.zip
+          (cd release-assets && sha256sum -c SHA256SUMS.txt)
+
+      - name: Upload workflow artifact
+        if: steps.existing.outputs.exists != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-ip-shield-v0.1.0-release-assets
+          path: release-assets/*
+
+      - name: Create v0.1.0 tag and GitHub Release
+        if: steps.existing.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! git rev-parse v0.1.0 >/dev/null 2>&1; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git tag -a v0.1.0 "$GITHUB_SHA" -m "AI-IP Shield v0.1.0 Public Alpha"
+            git push origin v0.1.0
+          fi
+          gh release create v0.1.0 \
+            release-assets/AI-IP-Shield-v0.1.0-release.zip \
+            release-assets/AI-IP-Shield-v0.1.0-source.tar.gz \
+            release-assets/ai_ip_shield-0.1.0-py3-none-any.whl \
+            release-assets/ai-ip-shield-skill-v0.1.0.zip \
+            release-assets/SHA256SUMS.txt \
+            --title "AI-IP Shield v0.1.0 — Public Alpha" \
+            --notes-file RELEASE-NOTES-v0.1.0.md \
+            --verify-tag \
+            --latest

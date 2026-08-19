@@ -1,0 +1,20 @@
+{
+  "input_path": "reports/step5.8/demo/source-demo.pdf",
+  "output_path": "reports/step5.8/demo/protected-demo.pdf",
+  "source_sha256": "f6368af2f266bc4d12b3ed08e6be0b19c2f368776903fb6d9e9caf3cee29ea33",
+  "protected_sha256": "a8ea5fbade3fd9ddf28861a060632475a5b311a946f02b6f2652f5b9fca5ba59",
+  "fingerprint": {
+    "fingerprint_id": "AIPS-F6368AF2F2-235F0DE9-V01-5F8FB1-BAFE",
+    "watermark_token": "3BB65B4357230AB5",
+    "asset_id": "F6368AF2F2",
+    "copy_id": "235F0DE9",
+    "version": 1
+  },
+  "engine": "blind-watermark-native-pdf-adaptive",
+  "page_count": 3,
+  "render_dpi": 120,
+  "page_image_format": "jpeg",
+  "rasterized": true,
+  "report_path": null,
+  "provenance": null
+}

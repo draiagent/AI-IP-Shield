@@ -1,0 +1,25 @@
+{
+  "python_version": "3.13.5",
+  "torch_version": "2.10.0+cpu",
+  "torchvision_version": "0.25.0+cpu",
+  "cuda_available": false,
+  "device": "cpu",
+  "videoseal_importable": false,
+  "videoseal_version": null,
+  "source_dir": null,
+  "checkpoint_path": null,
+  "checkpoint_exists": false,
+  "checkpoint_size_bytes": null,
+  "checkpoint_sha256": null,
+  "checkpoint_looks_valid": false,
+  "model_card": "pixelseal",
+  "ready": false,
+  "errors": [
+    "videoseal: ModuleNotFoundError: No module named 'videoseal'"
+  ],
+  "warnings": [
+    "No local PixelSeal checkpoint configured. videoseal.load('pixelseal') will require network access to download the official checkpoint.",
+    "Current Python is 3.13; Meta's README documents Python 3.10 as its reference environment.",
+    "CUDA is unavailable; PixelSeal inference will run on CPU and may be slow."
+  ]
+}

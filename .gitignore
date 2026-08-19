@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# AI-IP Shield runtime data
+data/
+*.sqlite3
+reports/attack-artifacts/
+
+# Private keys and certificates
+*.key
+*.pem
+!tests/fixtures/**/*.pem
+!examples/**/*.pub.pem
+signing*.pem
+private*.pem
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

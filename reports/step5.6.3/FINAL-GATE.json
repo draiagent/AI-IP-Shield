@@ -1,0 +1,276 @@
+{
+  "step": "5.6.3",
+  "mode": "final",
+  "dataset_complete": true,
+  "engine_result": {
+    "engine_requested": "blind-native",
+    "golden_images": 100,
+    "negative_controls": 500,
+    "false_positive_rate": 0.0,
+    "mean_psnr": 38.004461567225825,
+    "mean_ssim": 0.9545381448666592,
+    "mean_embed_ms": 639.2672349000031,
+    "attack_elapsed_seconds": 336.5791438640017,
+    "negative_elapsed_seconds": 140.37378789400054,
+    "per_attack": {
+      "ORIGINAL": {
+        "cases": 100,
+        "detection_rate": 1.0,
+        "recovery_rate": 1.0,
+        "mean_ber": 0.00047169811320754723,
+        "mean_runtime_ms": 42.56635607001954
+      },
+      "T01-copy": {
+        "cases": 100,
+        "detection_rate": 1.0,
+        "recovery_rate": 1.0,
+        "mean_ber": 0.00047169811320754723,
+        "mean_runtime_ms": 38.117096170003606
+      },
+      "T02-screenshot": {
+        "cases": 100,
+        "detection_rate": 0.97,
+        "recovery_rate": 0.97,
+        "mean_ber": 0.002688679245283019,
+        "mean_runtime_ms": 89.5551638899633
+      },
+      "T03-resize-75": {
+        "cases": 100,
+        "detection_rate": 0.98,
+        "recovery_rate": 0.98,
+        "mean_ber": 0.0021226415094339622,
+        "mean_runtime_ms": 46.49490307996075
+      },
+      "T03-resize-50": {
+        "cases": 100,
+        "detection_rate": 0.98,
+        "recovery_rate": 0.98,
+        "mean_ber": 0.0033962264150943396,
+        "mean_runtime_ms": 35.614823779978906
+      },
+      "T03-crop-10": {
+        "cases": 100,
+        "detection_rate": 0.99,
+        "recovery_rate": 0.99,
+        "mean_ber": 0.0020754716981132076,
+        "mean_runtime_ms": 390.46507257995023
+      },
+      "T03-crop-20": {
+        "cases": 100,
+        "detection_rate": 0.95,
+        "recovery_rate": 0.95,
+        "mean_ber": 0.00830188679245283,
+        "mean_runtime_ms": 424.1326848000289
+      },
+      "T03-rotate-3": {
+        "cases": 100,
+        "detection_rate": 0.97,
+        "recovery_rate": 0.97,
+        "mean_ber": 0.0038207547169811324,
+        "mean_runtime_ms": 522.0966783499898
+      },
+      "T04-jpeg-95": {
+        "cases": 100,
+        "detection_rate": 1.0,
+        "recovery_rate": 1.0,
+        "mean_ber": 0.0005660377358490566,
+        "mean_runtime_ms": 28.498697949976304
+      },
+      "T04-jpeg-75": {
+        "cases": 100,
+        "detection_rate": 0.99,
+        "recovery_rate": 0.99,
+        "mean_ber": 0.002075471698113207,
+        "mean_runtime_ms": 25.569555000038235
+      },
+      "T04-jpeg-60": {
+        "cases": 100,
+        "detection_rate": 0.98,
+        "recovery_rate": 0.98,
+        "mean_ber": 0.0042452830188679245,
+        "mean_runtime_ms": 24.20252150999204
+      },
+      "T05-conversion": {
+        "cases": 100,
+        "detection_rate": 0.99,
+        "recovery_rate": 0.99,
+        "mean_ber": 0.0011320754716981133,
+        "mean_runtime_ms": 32.48106464004195
+      },
+      "TC-resize75-jpeg60": {
+        "cases": 100,
+        "detection_rate": 0.96,
+        "recovery_rate": 0.96,
+        "mean_ber": 0.009009433962264151,
+        "mean_runtime_ms": 28.507070589980685
+      },
+      "TC-crop10-jpeg75": {
+        "cases": 100,
+        "detection_rate": 0.96,
+        "recovery_rate": 0.96,
+        "mean_ber": 0.004952830188679245,
+        "mean_runtime_ms": 288.15688362999026
+      }
+    },
+    "gate_decisions": [
+      {
+        "gate": "ORIGINAL",
+        "passed": true,
+        "detection": 1.0,
+        "detection_min": 1.0,
+        "recovery": 1.0,
+        "recovery_min": 0.99
+      },
+      {
+        "gate": "T01-copy",
+        "passed": true,
+        "detection": 1.0,
+        "detection_min": 1.0,
+        "recovery": 1.0,
+        "recovery_min": 1.0
+      },
+      {
+        "gate": "T02-screenshot",
+        "passed": true,
+        "detection": 0.97,
+        "detection_min": 0.9,
+        "recovery": 0.97,
+        "recovery_min": 0.85
+      },
+      {
+        "gate": "T03-resize-75",
+        "passed": true,
+        "detection": 0.98,
+        "detection_min": 0.95,
+        "recovery": 0.98,
+        "recovery_min": 0.95
+      },
+      {
+        "gate": "T03-resize-50",
+        "passed": true,
+        "detection": 0.98,
+        "detection_min": 0.95,
+        "recovery": 0.98,
+        "recovery_min": 0.95
+      },
+      {
+        "gate": "T03-crop-10",
+        "passed": true,
+        "detection": 0.99,
+        "detection_min": 0.9,
+        "recovery": 0.99,
+        "recovery_min": 0.9
+      },
+      {
+        "gate": "T03-crop-20",
+        "passed": true,
+        "detection": 0.95,
+        "detection_min": 0.9,
+        "recovery": 0.95,
+        "recovery_min": 0.9
+      },
+      {
+        "gate": "T03-rotate-3",
+        "passed": true,
+        "detection": 0.97,
+        "detection_min": 0.85,
+        "recovery": 0.97,
+        "recovery_min": 0.85
+      },
+      {
+        "gate": "T04-jpeg-95",
+        "passed": true,
+        "detection": 1.0,
+        "detection_min": 0.95,
+        "recovery": 1.0,
+        "recovery_min": 0.95
+      },
+      {
+        "gate": "T04-jpeg-75",
+        "passed": true,
+        "detection": 0.99,
+        "detection_min": 0.95,
+        "recovery": 0.99,
+        "recovery_min": 0.95
+      },
+      {
+        "gate": "T04-jpeg-60",
+        "passed": true,
+        "detection": 0.98,
+        "detection_min": 0.9,
+        "recovery": 0.98,
+        "recovery_min": 0.9
+      },
+      {
+        "gate": "T05-conversion",
+        "passed": true,
+        "detection": 0.99,
+        "detection_min": 0.85,
+        "recovery": 0.99,
+        "recovery_min": 0.8
+      },
+      {
+        "gate": "TC-resize75-jpeg60",
+        "passed": true,
+        "detection": 0.96,
+        "detection_min": 0.7,
+        "recovery": 0.96,
+        "recovery_min": 0.7
+      },
+      {
+        "gate": "TC-crop10-jpeg75",
+        "passed": true,
+        "detection": 0.96,
+        "detection_min": 0.7,
+        "recovery": 0.96,
+        "recovery_min": 0.7
+      },
+      {
+        "gate": "FALSE_POSITIVE",
+        "passed": true,
+        "fpr": 0.0,
+        "fpr_max_exclusive": 0.01
+      }
+    ],
+    "passed": true
+  },
+  "fingerprint_collision_test": {
+    "generated": 100000,
+    "fingerprint_id_duplicates": 0,
+    "watermark_token_duplicates": 0,
+    "elapsed_seconds": 0.29686493600001995,
+    "passed": true
+  },
+  "pixel_runtime": {
+    "python_version": "3.13.5",
+    "torch_version": "2.10.0+cpu",
+    "torchvision_version": "0.25.0+cpu",
+    "cuda_available": false,
+    "device": "cpu",
+    "videoseal_importable": false,
+    "videoseal_version": null,
+    "source_dir": null,
+    "checkpoint_path": null,
+    "checkpoint_exists": false,
+    "checkpoint_size_bytes": null,
+    "checkpoint_sha256": null,
+    "checkpoint_looks_valid": false,
+    "model_card": "pixelseal",
+    "ready": false,
+    "errors": [
+      "videoseal: ModuleNotFoundError: No module named 'videoseal'"
+    ],
+    "warnings": [
+      "No local PixelSeal checkpoint configured. videoseal.load('pixelseal') will require network access to download the official checkpoint.",
+      "Current Python is 3.13; Meta's README documents Python 3.10 as its reference environment.",
+      "CUDA is unavailable; PixelSeal inference will run on CPU and may be slow."
+    ]
+  },
+  "pixel_status": "BLOCKED_RUNTIME_OR_CHECKPOINT",
+  "production_engine": "blind-native",
+  "decision": "GO_V0.1_CPU_PRODUCTION",
+  "notes": [
+    "Final decision uses 100 golden images and 500 negative controls.",
+    "PixelSeal receives no robustness score without the real official checkpoint."
+  ]
+}

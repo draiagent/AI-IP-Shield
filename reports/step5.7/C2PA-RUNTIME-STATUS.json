@@ -1,0 +1,11 @@
+{
+  "step": "5.7",
+  "python_version": "3.13.5",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "c2pa_python_available": false,
+  "native_c2pa_smoke": "BLOCKED_NOT_INSTALLED",
+  "sidecar_provenance": "PASS",
+  "c2pa_contract_tests": "PASS",
+  "trust_semantics_regression": "PASS",
+  "note": "No surrogate native C2PA signing result is reported."
+}
