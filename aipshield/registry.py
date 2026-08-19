@@ -1,5 +1,6 @@
 from __future__ import annotations
 import sqlite3
+from contextlib import contextmanager
 from pathlib import Path
 from datetime import datetime, timezone
 from .models import Fingerprint
@@ -45,7 +46,7 @@ class FingerprintRegistry:
     def __init__(self, db_path: str | Path):
         self.db_path = str(db_path)
         Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
-        with self._connect() as con:
+        with self._transaction() as con:
             con.executescript(SCHEMA)
             self._migrate(con)
 
@@ -53,6 +54,19 @@ class FingerprintRegistry:
         con = sqlite3.connect(self.db_path)
         con.row_factory = sqlite3.Row
         return con
+
+    @contextmanager
+    def _transaction(self):
+        # sqlite3.Connection's own context manager only commits/rolls back;
+        # it never closes the connection. On Windows the leaked handle keeps
+        # the .sqlite3 file locked, so callers (e.g. tempdir cleanup) fail
+        # with PermissionError. Close explicitly here.
+        con = self._connect()
+        try:
+            with con:
+                yield con
+        finally:
+            con.close()
 
     @staticmethod
     def _migrate(con: sqlite3.Connection) -> None:
@@ -71,7 +85,7 @@ class FingerprintRegistry:
             page_count: int | None = None,
             render_dpi: int | None = None) -> None:
         created_at = datetime.now(timezone.utc).isoformat()
-        with self._connect() as con:
+        with self._transaction() as con:
             con.execute(
                 """INSERT INTO fingerprints
                 (watermark_token, fingerprint_id, asset_id, copy_id, version,
@@ -87,7 +101,7 @@ class FingerprintRegistry:
             )
 
     def get_by_token(self, token: str):
-        with self._connect() as con:
+        with self._transaction() as con:
             row = con.execute(
                 "SELECT * FROM fingerprints WHERE watermark_token=? AND status='active'",
                 (token.upper(),),
@@ -95,7 +109,7 @@ class FingerprintRegistry:
         return dict(row) if row else None
 
     def get_by_protected_sha256(self, protected_sha256: str):
-        with self._connect() as con:
+        with self._transaction() as con:
             row = con.execute(
                 "SELECT * FROM fingerprints WHERE protected_sha256=? AND status='active'",
                 (protected_sha256,),
@@ -103,5 +117,5 @@ class FingerprintRegistry:
         return dict(row) if row else None
 
     def count(self) -> int:
-        with self._connect() as con:
+        with self._transaction() as con:
             return int(con.execute("SELECT COUNT(*) FROM fingerprints").fetchone()[0])
