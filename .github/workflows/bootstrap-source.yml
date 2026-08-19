@@ -22,13 +22,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          archive=".bootstrap/AI-IP-Shield-v0.1.0-bootstrap-source.tar.xz"
-          if [ ! -f "$archive" ]; then
-            echo "Bootstrap archive already consumed; nothing to do."
+          shopt -s nullglob
+          chunks=(.bootstrap/chunk-*.b64)
+          if [ ${#chunks[@]} -eq 0 ]; then
+            echo "Bootstrap chunks already consumed; nothing to do."
             exit 0
           fi
-          echo "49b552468126460ea45f33fe34b9743dc3e42bf8bbe8caf254bff11ea2c4e6df  $archive" | sha256sum -c -
-          tar -xJf "$archive" -C .
+          tmp="$(mktemp --suffix=.tar.xz)"
+          cat "${chunks[@]}" | tr -d '\n\r' | base64 -d > "$tmp"
+          echo "674490c76f935ee0cf2de8da2c4af6624635115c0d37f5a614b5deb030046d38  $tmp" | sha256sum -c -
+          tar -xJf "$tmp" -C .
+          rm -f "$tmp"
           rm -rf .bootstrap
           rm -f .github/workflows/bootstrap-source.yml
           git add -A
